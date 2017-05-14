@@ -1,0 +1,143 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context="fraiburgo.ifc.edu.br.fragments.UserFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl_user_content"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_listview"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:paddingBottom="20dp"
+            android:text="&quot;I am the one who knocks, I am the danger!&quot;"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFF"
+            android:textSize="23dp"
+            android:textStyle="bold|italic" />
+
+        <fraiburgo.ifc.edu.br.utils.CircularImageView
+            android:id="@+id/iv_listview"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="false"
+            android:src="@drawable/no_user">
+
+        </fraiburgo.ifc.edu.br.utils.CircularImageView>
+
+        <TabHost
+            android:id="@+id/tabHost_user"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tv_user_name">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="382dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/primary_light"></TabWidget>
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <LinearLayout
+                        android:id="@+id/tab_postagens"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <ListView
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:id="@+id/listViewUserPostagens" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tab_conquistas"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="Em Breve..."
+                            android:id="@+id/textView24"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:textColor="@color/secondary_text"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/iv_listview"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_config"
+            android:background="@color/accent"
+            android:padding="6dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl_user_load"
+        android:visibility="visible">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar3"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Carregando Usuário"
+            android:id="@+id/textView21"
+            android:layout_below="@+id/progressBar3"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/primary_text" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

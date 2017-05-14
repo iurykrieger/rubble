@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_light"
+        android:id="@+id/relativeLayout">
+
+        <TextView
+            android:id="@+id/tv_listview_item_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/primary_text"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:layout_alignTop="@+id/iv_listview"
+            android:layout_toRightOf="@+id/iv_listview"
+            android:layout_toEndOf="@+id/iv_listview"
+            android:layout_marginRight="15dp" />
+
+        <fraiburgo.ifc.edu.br.utils.CircularImageView
+            android:id="@+id/iv_listview"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:paddingBottom="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+        </fraiburgo.ifc.edu.br.utils.CircularImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/tv_listview_item_subtitle"
+            android:layout_below="@+id/tv_listview_item_title"
+            android:layout_toRightOf="@+id/iv_listview"
+            android:layout_alignRight="@+id/tv_listview_item_title"
+            android:layout_alignEnd="@+id/tv_listview_item_title"
+            android:textSize="18sp"
+            android:textColor="@color/primary_text"
+            android:layout_alignBottom="@+id/iv_listview" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_listview_item_foto"
+            android:adjustViewBounds="true"
+            android:layout_toRightOf="@+id/iv_listview"
+            android:layout_alignRight="@+id/tv_listview_item_subtitle"
+            android:layout_below="@+id/tv_listview_item_subtitle"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

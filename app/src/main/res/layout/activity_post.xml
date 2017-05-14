@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_light"
+    tools:context=".testeActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/activity_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            tools:context="fraiburgo.ifc.edu.br.fragments.PostActivity">
+
+            <RelativeLayout
+                android:id="@+id/rl_postagem_loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:id="@+id/pb_postagem"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="163dp"
+                    android:indeterminate="false"
+                    android:max="100" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pb_postagem"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="Efetuando postagem..."
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/secondary_text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_postagem_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true">
+
+                <fraiburgo.ifc.edu.br.utils.CircularImageView
+                    android:id="@+id/iv_listview"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center_horizontal|top"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:adjustViewBounds="false"
+                    android:src="@drawable/leaf">
+
+                </fraiburgo.ifc.edu.br.utils.CircularImageView>
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/tv_postagem_user"
+                    android:layout_alignLeft="@+id/iv_listview"
+                    android:layout_alignRight="@+id/tv_postagem_user"
+                    android:layout_alignStart="@+id/iv_listview"
+                    android:layout_below="@+id/iv_listview"
+                    android:layout_marginTop="15dp"
+                    android:text="Descrição"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/primary_text" />
+
+                <EditText
+                    android:id="@+id/et_postagem_descricao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/textView11"
+                    android:layout_alignLeft="@+id/textView11"
+                    android:layout_alignRight="@+id/textView11"
+                    android:layout_alignStart="@+id/textView11"
+                    android:layout_below="@+id/textView11"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/accent"
+                    android:ems="10"
+                    android:hint="Descreva a postagem..."
+                    android:inputType="textCapSentences"
+                    android:padding="10dp" />
+
+                <Spinner
+                    android:id="@+id/spn_postagem_tipo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/textView"
+                    android:layout_alignLeft="@+id/textView"
+                    android:layout_alignRight="@+id/textView"
+                    android:layout_alignStart="@+id/textView"
+                    android:layout_below="@+id/textView"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/accent"
+                    android:hint="Qual o tipo da postagem?"
+                    android:spinnerMode="dropdown" />
+
+                <TextView
+                    android:id="@+id/tv_postagem_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/iv_listview"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/iv_listview"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_toRightOf="@+id/iv_listview"
+                    android:gravity="center_vertical"
+                    android:text="Large Text"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/secondary_text" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/et_postagem_descricao"
+                    android:layout_alignLeft="@+id/et_postagem_descricao"
+                    android:layout_alignRight="@+id/et_postagem_descricao"
+                    android:layout_alignStart="@+id/et_postagem_descricao"
+                    android:layout_below="@+id/et_postagem_descricao"
+                    android:layout_marginTop="15dp"
+                    android:text="Tipo"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/primary_text" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/spn_postagem_status"
+                    android:layout_alignLeft="@+id/spn_postagem_status"
+                    android:layout_alignRight="@+id/spn_postagem_status"
+                    android:layout_alignStart="@+id/spn_postagem_status"
+                    android:layout_below="@+id/spn_postagem_status"
+                    android:layout_marginTop="15dp"
+                    android:text="Localização"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/primary_text" />
+
+                <TextView
+                    android:id="@+id/tv_postagem_localizacao"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/textView12"
+                    android:layout_alignLeft="@+id/textView12"
+                    android:layout_alignRight="@+id/textView12"
+                    android:layout_alignStart="@+id/textView12"
+                    android:layout_below="@+id/textView12"
+                    android:layout_marginTop="15dp"
+                    android:text="Localização"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/secondary_text" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/spn_postagem_tipo"
+                    android:layout_alignLeft="@+id/spn_postagem_tipo"
+                    android:layout_alignRight="@+id/spn_postagem_tipo"
+                    android:layout_alignStart="@+id/spn_postagem_tipo"
+                    android:layout_below="@+id/spn_postagem_tipo"
+                    android:layout_marginTop="15dp"
+                    android:text="Status"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/primary_text" />
+
+                <Spinner
+                    android:id="@+id/spn_postagem_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/textView13"
+                    android:layout_alignLeft="@+id/textView13"
+                    android:layout_alignRight="@+id/textView13"
+                    android:layout_alignStart="@+id/textView13"
+                    android:layout_below="@+id/textView13"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/accent"
+                    android:ems="10"
+                    android:hint="Qual o status da postagem?"
+                    android:inputType="textMultiLine"
+                    android:spinnerMode="dropdown" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/primary_dark"
+            app:expandedTitleMarginEnd="34dp"
+            app:expandedTitleMarginStart="10dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/iv_postagem_foto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/primary_dark"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background_post"
+                android:transitionName="element1"
+                app:layout_collapseMode="parallax" />
+
+            <ProgressBar
+                android:id="@+id/pb_buildpost_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:indeterminate="true" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tb_main"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="0dp"
+                android:minHeight="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_postagem_postar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="0dp"
+        android:clickable="true"
+        android:src="@drawable/post"
+        app:backgroundTint="@color/accent"
+        app:borderWidth="2dp"
+        app:fabSize="normal"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="bottom|right|end" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_postagem_imagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:clickable="true"
+        android:src="@drawable/add_photo"
+        app:backgroundTint="@color/accent"
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="bottom|right" />
+
+</android.support.design.widget.CoordinatorLayout>
